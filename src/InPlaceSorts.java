@@ -5,7 +5,7 @@ public class InPlaceSorts {
      * @param length
      * @return
      */
-    public static int[] newArray(int length){
+    public static int[] newIntArray(int length){
         int[] array = new int[length];
         for(int i=0;i<array.length;i++){
             array[i] = (int)(Math.random()*10001);
@@ -14,13 +14,40 @@ public class InPlaceSorts {
     }
 
     /**
-     * Swaps the value in pos1 and pos2 of array arr
+     * Creates a double array with length length filled with double from 0~10000
+     * @param length
+     * @return
+     */
+    public static double[] newDoubleArray(int length){
+        double[] array = new double[length];
+        for(int i=0;i<array.length;i++){
+            array[i] = Math.random()*10001;
+        }
+        return array;
+    }
+
+    public static String[] newStringArray(int length){
+        String[] array = new String[length];
+        for(int i=0;i<array.length;i++){
+            array[i] = Character.toString((char)(Math.random()*55));
+        }
+        return array;
+    }
+
+    /**
+     * Swaps the value in pos1 and pos2 of int array arr
      * @param arr
      * @param pos1
      * @param pos2
      */
-    public static void swap(int[] arr, int pos1, int pos2){
+    public static void intSwap(int[] arr, int pos1, int pos2){
         int temp = arr[pos1];
+        arr[pos1] = arr[pos2];
+        arr[pos2] = temp;
+    }
+
+    public static void doubleSwap(double[] arr, int pos1, int pos2){
+        double temp = arr[pos1];
         arr[pos1] = arr[pos2];
         arr[pos2] = temp;
     }
@@ -29,7 +56,7 @@ public class InPlaceSorts {
      * Selection Sort
      * @param arr
      */
-    public static void selectionSort(int[] arr) {
+    public static void selectionSort(double[] arr) {
         int index = 0;
         boolean swap = true;
         int temp;
@@ -43,7 +70,7 @@ public class InPlaceSorts {
                 }
             }
             if(swap) {
-                swap(arr, temp, index);
+                doubleSwap(arr, temp, index);
             }
             index++;
         }
@@ -62,7 +89,7 @@ public class InPlaceSorts {
             for(int i=0;i<end-1;i++){
                 if(arr[i]>arr[i+1]){
                     swap = true;
-                    swap(arr,i,i+1);
+                    intSwap(arr,i,i+1);
                     temp = i+1;
                 }
             }
