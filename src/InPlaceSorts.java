@@ -130,4 +130,17 @@ public class InPlaceSorts {
         }
     }
 
+    public static void insertionSort(int[] arr){
+        for(int i=0;i<arr.length-1;i++){
+            if(arr[i]>arr[i+1]){
+                for(int j=i;j>0;j--){
+                    if(arr[i]<arr[j]){
+                        intSwap(arr,j,i);
+                    } else {
+                        break;
+                    }
+                }
+            }
+        }
+    }
 }
