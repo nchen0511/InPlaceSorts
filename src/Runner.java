@@ -2,24 +2,23 @@
 public class Runner {
 
     public static void main(String[] args) {
-        double[] arrayS = InPlaceSorts.newDoubleArray(25000);
-        int[] arrayB = InPlaceSorts.newStringArray(25000);
-        int[] arrayI = InPlaceSorts.newIntArray(25000);
+        double[] arrayDouble = InPlaceSorts.newDoubleArray(25000);
+        String[] arrayString = InPlaceSorts.newStringArray(25000,5);
+        int[] arrayInt = InPlaceSorts.newIntArray(25000);
         long time;
 
         //Selection Sort Time
         time = System.currentTimeMillis();
-        InPlaceSorts.selectionSort(arrayS);
+        InPlaceSorts.selectionSort(arrayDouble);
         time = System.currentTimeMillis() - time;
         System.out.println("Selection Sort Took: " + time*.001 + " seconds");
 
         //Bubble Sort Time
         time = System.currentTimeMillis();
-        InPlaceSorts.bubbleSort(arrayB);
+        InPlaceSorts.bubbleSort(arrayString);
         time = System.currentTimeMillis() - time;
         System.out.println("Bubble Sort Took: " + time*.001 + " seconds");
 
 
     }
 }
-
